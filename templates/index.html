@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>DONGHO's English Dictionary</title>
+
+        <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+
+        <!--         JS -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                        crossorigin="anonymous"></script>
+
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+        <style>
+            h1 {
+                font-family: 'Lobster', cursive;
+                font-size: 45px;
+            }
+
+            .wrap {
+                width: 700px;
+                margin: auto;
+            }
+
+            .form-group {
+                width: 300px;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                border-width: 10px;
+            }
+
+            .tag-form {
+                margin-top: 10px;
+            }
+
+            .btn-dark {
+                margin-top: 10px;
+            }
+
+            .lists {
+                width: 800px;
+                margin: auto;
+            }
+        </style>
+
+        <script>
+            function postWord() {
+
+                let word = $("#formWord").val();
+                let tag = $("#formTag").val()
+
+                if (word == "") {
+                    alert("단어를 입력해주세요")
+                    $("#formWord").focus()
+                    return
+                } else if (tag == "") {
+                    alert("태그를 입력해주세요")
+                    $("#formTag").focus()
+                    return
+                }
+                alert("저장되었습니다")
+            }
+        </script>
+        
+    </head>
+    <body>
+        <div class="wrap">
+            <h1 class="title">DONGHO's English Dictionary</h1>
+
+            <form class="form-group">
+                <div>
+                    <input type="text" class="form-control" id="formWord" placeholder="영단어">
+                </div>
+                <div class="tag-form">
+                    <input type="text" class="form-control" id="formTag" placeholder="태그">
+                </div>
+                <button type="button" class="btn btn-dark" onclick="postWord()">저장</button>
+            </form>
+        </div>
+
+        <div class="lists">
+            <table class="table">
+                <ol reversed>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">영단어</th>
+                        <th scope="col">뜻</th>
+                        <th scope="col">태그</th>
+                        <th scope="col">날짜</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Hello</td>
+                        <td>(만났을 때의 인사로) 안녕(하세요);</td>
+                        <td>#book</td>
+                        <td>2020-08-15</td>
+                    </tr>
+                </tbody>
+                    </ol>
+            </table>
+        </div>
+    </body>
+</html>
